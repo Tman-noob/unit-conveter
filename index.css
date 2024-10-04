@@ -2,13 +2,14 @@ body {
     margin: 0;
     text-align: center;
     font-family: Inter, sans-serif;
-    background-color: #000000;
+    background-color: #1F2937;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .top {
+    width: 100%;
     background-color: #6943FF;
     color: white;
     display: flex;
@@ -19,7 +20,7 @@ body {
 }
 
 h1 {
-    font-size: 30px;
+    font-size: 20px;
 }
 
 #user-input {
@@ -35,6 +36,22 @@ h1 {
     font-family: inherit;
 }
 
+#user-input:focus {
+    outline: none;
+    border: 2px solid #fbfaff;
+    box-shadow: 0 0 10px #719ECE;
+}
+
+::placeholder {
+    color: #B295FF;
+}
+
+input:focus::placeholder {
+    width: 80px;
+    height: 60px;
+    color: transparent;
+  }
+
 #convert-btn {
     padding: 8px 20px;
     border-radius: 5px;
@@ -42,15 +59,21 @@ h1 {
     cursor: pointer;
     margin-bottom: 20px;
     margin-top: 10px;
+    transition: all .2s ease-in-out;
 }
 
 #convert-btn:hover {
     background-color: rgb(167, 165, 165);
 }
 
+#convert-btn:active {
+    transform: scale(1.1);
+	transition: .1s;
+}
+
 .bottom {
+    width: 100%;
     background-color: #1F2937;
-    width: 500px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -62,7 +85,7 @@ h1 {
 .volume,
 .mass {
     background-color: #273549;
-    width: 450px;
+    width: 95%;
 }
 
 .length {
@@ -80,4 +103,24 @@ h2 {
 
 p {
     font-size: 12px;
+}
+
+@media (min-width: 500px) {
+    h1 {
+        font-size: 30px;
+    }
+    h2 {
+        font-size: 25px;
+    }
+    p {
+        font-size: 15px;
+    }
+    #user-input {
+        width: 100px;
+        height: 80px;
+        font-size: 40px;
+    }
+    #convert-btn {
+        font-size: 20px;
+    }
 }
